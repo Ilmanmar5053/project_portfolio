@@ -558,6 +558,101 @@ a {
   font-weight: 700;
 }
 
+/* === CERTIFICATES === */
+.certificate-group + .certificate-group {
+  margin-top: 3rem;
+}
+
+.certificate-group-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.certificate-group-head h3 {
+  margin: 0.35rem 0 0;
+  font-family: var(--font-display);
+  font-size: 2rem;
+}
+
+.certificate-label {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(232, 213, 163, 0.45);
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.certificate-count {
+  color: var(--color-primary-dark);
+  font-weight: 700;
+}
+
+.certificate-card {
+  display: block;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+  text-align: left;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 1.5rem;
+  box-shadow: 0 18px 45px var(--color-shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.certificate-card:hover,
+.certificate-card:focus {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 50px rgba(100, 70, 20, 0.16);
+}
+
+.certificate-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center;
+  background: var(--color-bg-alt);
+}
+
+.certificate-card-body {
+  display: block;
+  padding: 1.15rem 1.15rem 1.25rem;
+}
+
+.certificate-card-body strong {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 1rem;
+}
+
+.certificate-card-body small {
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+}
+
+.certificate-modal-content {
+  background: #fffdf9;
+  border: 1px solid var(--color-border);
+  border-radius: 1.75rem;
+}
+
+.certificate-modal-image {
+  display: block;
+  width: 100%;
+  max-height: 78vh;
+  object-fit: contain;
+  border-radius: 1rem;
+  background: linear-gradient(180deg, #fff, #faf4e7);
+}
+
 /* === CONTACT === */
 .contact-list {
   display: grid;
@@ -818,6 +913,15 @@ a {
 
   .stats-grid {
     width: 100%;
+  }
+
+  .certificate-group-head {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .certificate-group-head h3 {
+    font-size: 1.65rem;
   }
 }
 

@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const revealElements = document.querySelectorAll(".reveal");
   const progressBars = document.querySelectorAll(".progress-bar[data-progress]");
   const contactForm = document.getElementById("contactForm");
+  const certificateModal = document.getElementById("certificateModal");
   const navbarCollapse = document.querySelector(".navbar-collapse");
   const navbar = document.getElementById("mainNav");
   const navLinks = document.querySelectorAll(".nav-link");
@@ -123,6 +124,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
       window.alert("Pesan Anda berhasil dikirim. Terima kasih sudah menghubungi Ilman.");
       contactForm.reset();
+    });
+  }
+
+  /* === CERTIFICATE MODAL === */
+  if (certificateModal) {
+    certificateModal.addEventListener("show.bs.modal", (event) => {
+      const trigger = event.relatedTarget;
+      if (!trigger) {
+        return;
+      }
+
+      const modalTitle = certificateModal.querySelector("#certificateModalLabel");
+      const modalCategory = certificateModal.querySelector("#certificateModalCategory");
+      const modalImage = certificateModal.querySelector("#certificateModalImage");
+
+      modalTitle.textContent = trigger.dataset.certTitle || "Certificate Preview";
+      modalCategory.innerHTML = trigger.dataset.certCategory || "Certificate";
+      modalImage.src = trigger.dataset.certSrc || "";
+      modalImage.alt = trigger.dataset.certTitle || "Certificate preview";
     });
   }
 
