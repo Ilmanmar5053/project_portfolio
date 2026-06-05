@@ -37,26 +37,43 @@ a {
 
 .btn {
   border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: 58px;
   padding: 0.85rem 1.6rem;
   font-weight: 700;
   letter-spacing: 0.02em;
+  border-width: 1.5px;
+  box-shadow: none;
+  transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn:hover,
+.btn:focus {
+  transform: translateY(-2px);
 }
 
 .btn-primary {
   background: var(--color-primary);
   border-color: var(--color-primary);
   color: #fff;
+  box-shadow: 0 14px 28px rgba(200, 151, 58, 0.22);
 }
 
 .btn-primary:hover,
 .btn-primary:focus {
   background: var(--color-primary-dark);
   border-color: var(--color-primary-dark);
+  color: #fff;
+  box-shadow: 0 18px 34px rgba(158, 114, 40, 0.24);
 }
 
 .btn-outline-primary {
   color: var(--color-primary);
   border-color: var(--color-primary);
+  background: rgba(255, 255, 255, 0.72);
 }
 
 .btn-outline-primary:hover,
@@ -215,6 +232,8 @@ a {
 
 .hero-copy {
   animation: heroFadeUp 0.9s ease both;
+  max-width: 36rem;
+  padding-right: 1rem;
 }
 
 .hero-media {
@@ -231,6 +250,7 @@ a {
   font-size: 1.2rem;
   font-weight: 700;
   color: var(--color-text-muted);
+  line-height: 1.5;
 }
 
 .type-line {
@@ -256,6 +276,66 @@ a {
   margin: 1.5rem 0 2rem;
   color: var(--color-text-muted);
   font-size: 1.05rem;
+  line-height: 1.9;
+}
+
+.hero-actions {
+  display: grid;
+  gap: 1rem;
+  max-width: 34rem;
+}
+
+.hero-actions-main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.hero-btn-primary {
+  min-width: 230px;
+}
+
+.hero-btn-secondary {
+  min-width: 205px;
+}
+
+.hero-actions-sub {
+  display: flex;
+  align-items: center;
+}
+
+.hero-cv-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.1rem 0;
+  color: var(--color-text-muted);
+  font-weight: 700;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.hero-cv-link i {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.78);
+  color: var(--color-primary);
+  transition: inherit;
+}
+
+.hero-cv-link:hover,
+.hero-cv-link:focus {
+  color: var(--color-primary-dark);
+  transform: translateX(2px);
+}
+
+.hero-cv-link:hover i,
+.hero-cv-link:focus i {
+  border-color: var(--color-primary);
+  background: rgba(232, 213, 163, 0.32);
 }
 
 .hero-visual {
@@ -352,15 +432,27 @@ a {
 .profile-image-md {
   width: 180px;
   height: 180px;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 1.5rem;
 }
 
 /* === ABOUT === */
 .about-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
   text-align: center;
 }
 
 .about-location {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  margin-bottom: 0.2rem;
   color: var(--color-text-muted);
 }
 
@@ -368,6 +460,7 @@ a {
   display: grid;
   gap: 1rem;
   margin-top: 1.75rem;
+  width: 100%;
 }
 
 .stat-card {
@@ -561,6 +654,14 @@ a {
 /* === CERTIFICATES === */
 .certificate-group + .certificate-group {
   margin-top: 3rem;
+}
+
+.certificate-group {
+  padding: 2rem;
+  border: 1px solid var(--color-border);
+  border-radius: 1.75rem;
+  background: rgba(255, 255, 255, 0.62);
+  box-shadow: 0 18px 45px var(--color-shadow);
 }
 
 .certificate-group-head {
@@ -838,6 +939,11 @@ a {
 
 /* === MEDIA QUERIES === */
 @media (max-width: 991.98px) {
+  .hero-copy {
+    max-width: 100%;
+    padding-right: 0;
+  }
+
   .hero-section {
     padding-top: 6rem;
   }
@@ -866,6 +972,42 @@ a {
     min-height: 320px;
   }
 
+  .hero-actions {
+    max-width: 100%;
+    gap: 0.85rem;
+  }
+
+  .hero-actions-main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  .hero-btn-primary,
+  .hero-btn-secondary {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .hero-actions-main .btn {
+    justify-content: center;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+  }
+
+  .hero-actions-sub {
+    justify-content: center;
+  }
+
+  .hero-cv-link {
+    justify-content: center;
+    width: 100%;
+    padding: 0.9rem 1.1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.82);
+  }
+
   .orbit-one {
     width: 240px;
     height: 240px;
@@ -887,6 +1029,10 @@ a {
   .content-card,
   .about-panel,
   .project-card {
+    padding: 1.5rem;
+  }
+
+  .certificate-group {
     padding: 1.5rem;
   }
 
